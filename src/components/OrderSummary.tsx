@@ -29,7 +29,7 @@ const OrderSummary = ({restaurant, cartItems, removeFromCart}: Props) => {
         </CardTitle>
     </CardHeader>
     <CardContent className="flex flex-col gap-5">
-            {cartItems.map((item, index)=>(
+            {cartItems.map(item=>(
                 <div key={item._id} className="flex justify-between"> {/* Add key prop here */}
                     <span>
                         <Badge variant="outline" className="mr-2">
