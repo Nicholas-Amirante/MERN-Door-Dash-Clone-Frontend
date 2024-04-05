@@ -29,7 +29,7 @@ const OrderSummary = ({restaurant, cartItems, removeFromCart}: Props) => {
         </CardTitle>
     </CardHeader>
     <CardContent className="flex flex-col gap-5">
-            {cartItems.map(item=>(
+            {cartItems.map((item, _index) => (
                 <div key={item._id} className="flex justify-between"> {/* Add key prop here */}
                     <span>
                         <Badge variant="outline" className="mr-2">
@@ -38,7 +38,7 @@ const OrderSummary = ({restaurant, cartItems, removeFromCart}: Props) => {
                         {item.name}
                     </span>
                     <span className="flex items-center gap-1">
-                        <Trash  className="cursor-pointer" color="red" size={20} onClick={()=> removeFromCart(item)}/>
+                        <Trash className="cursor-pointer" color="red" size={20} onClick={() => removeFromCart(item)} />
                         ${(item.price * item.quantity).toFixed(2)}
                     </span>
                 </div>
